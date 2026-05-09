@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Syntax</title>
+</head>
+<body>
+    <h1>Java Script Syntax !</h1>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+        document.body.style.backgroundColor = "black";
+        document.body.style.fontFamily = "Arial, Helvetica, sans-serif";
+        document.body.style.color = "lightgreen";
+
+        // document.getElementById("demo").innerHTML = 10.50;
+        // document.getElementById("demo").innerHTML = "Hello World !";
+        
+        let name = "Ravishankar Gautam";
+        const age = 23;
+        let city = "Mumbai";
+        // document.getElementById("demo").innerHTML = "My name is " + name + ". I'm " + age + " years old and I live in " + city + ".";
+        document.getElementById('demo').textContent = `Hi, My Name is ${name}. I'm ${age} years old and I live in ${city}.`;
+
+        // Lower Camel Case:
+        // firstName, lastName, masterCard, interCity.
+        // JavaScript programmers tend to use lower camel case.
+
+    </script>
+</body>
+</html>

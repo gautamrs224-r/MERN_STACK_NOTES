@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validated Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex justify-center items-center p-6">
+
+  <div class="bg-white shadow-xl rounded-xl p-8 w-full max-w-lg">
+    <h1 class="text-3xl font-bold text-center mb-6">Registration Form</h1>
+
+    <form id="myForm" class="space-y-4">
+
+      <!-- Name -->
+      <div>
+        <label class="block font-semibold mb-1">Full Name</label>
+        <input id="name" type="text"
+          class="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+        <p class="text-red-500 text-sm mt-1 error"></p>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block font-semibold mb-1">Email</label>
+        <input id="email" type="text"
+          class="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+        <p class="text-red-500 text-sm mt-1 error"></p>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label class="block font-semibold mb-1">Password</label>
+        <input id="password" type="password"
+          class="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+        <p class="text-red-500 text-sm mt-1 error"></p>
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label class="block font-semibold mb-1">Phone</label>
+        <input id="phone" type="text"
+          class="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+        <p class="text-red-500 text-sm mt-1 error"></p>
+      </div>
+
+      <!-- Age -->
+      <div>
+        <label class="block font-semibold mb-1">Age</label>
+        <input id="age" type="number"
+          class="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+        <p class="text-red-500 text-sm mt-1 error"></p>
+      </div>
+
+      <!-- Website -->
+      <div>
+        <label class="block font-semibold mb-1">Website URL</label>
+        <input id="website" type="text"
+          class="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+        <p class="text-red-500 text-sm mt-1 error"></p>
+      </div>
+
+      <!-- Bio -->
+      <div>
+        <label class="block font-semibold mb-1">Bio</label>
+        <textarea id="bio"
+          class="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <p class="text-red-500 text-sm mt-1 error"></p>
+      </div>
+
+      <button
+        class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+        Submit
+      </button>
+
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+
+      // Inputs
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const phone = document.getElementById("phone");
+      const age = document.getElementById("age");
+      const website = document.getElementById("website");
+      const bio = document.getElementById("bio");
+
+      // Regex Patterns
+      const nameRegex = /^[A-Za-z ]{3,30}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+      const phoneRegex = /^[0-9]{10}$/;
+      const urlRegex =
+        /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-z]{2,}(\/\S*)?$/;
+
+      // Clear old errors
+      document.querySelectorAll(".error").forEach((el) => {
+        el.textContent = "";
+      });
+
+      // Name Validation
+      if (!nameRegex.test(name.value.trim())) {
+        showError(name, "Name must be 3-30 letters only");
+        isValid = false;
+      }
+
+      // Email Validation
+      if (!emailRegex.test(email.value.trim())) {
+        showError(email, "Enter valid email");
+        isValid = false;
+      }
+
+      // Password Validation
+      if (!passwordRegex.test(password.value.trim())) {
+        showError(
+          password,
+          "Password must contain uppercase, lowercase, number & special character"
+        );
+        isValid = false;
+      }
+
+      // Phone Validation
+      if (!phoneRegex.test(phone.value.trim())) {
+        showError(phone, "Phone must be 10 digits");
+        isValid = false;
+      }
+
+      // Age Validation
+      if (age.value < 18 || age.value > 60) {
+        showError(age, "Age must be between 18-60");
+        isValid = false;
+      }
+
+      // Website Validation
+      if (!urlRegex.test(website.value.trim())) {
+        showError(website, "Enter valid website URL");
+        isValid = false;
+      }
+
+      // Bio Validation
+      if (bio.value.trim().length < 20) {
+        showError(bio, "Bio must be at least 20 characters");
+        isValid = false;
+      }
+
+      // Success
+      if (isValid) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+
+    function showError(input, message) {
+      input.nextElementSibling.textContent = message;
+    }
+  </script>
+
+</body>
+</html>

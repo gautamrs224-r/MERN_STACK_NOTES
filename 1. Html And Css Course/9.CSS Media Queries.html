@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Media Queries</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: aliceblue;
+      }
+      .box{
+        background-color: lightskyblue;
+        display: flex;
+        margin: 10px;
+        height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid chocolate;
+        border-radius: 7px;
+      }
+      .box2{
+        background-color: lightskyblue;
+        margin: 10px;
+        height: 50px;
+        border: 2px solid chocolate;
+        border-radius: 7px;
+        height: 80%;
+      }
+      .box .logo h1{
+        background-color: aqua;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 5px;
+        font-size: 25px;
+        margin-left: 15px;
+      }
+      .bar{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+      .bar h4{
+        background-color: rgba(0, 255, 255, 0.836);
+        padding: 5px;
+        border-radius: 10px;
+        margin-right: 25px;
+      }
+      .bar h5{
+        display: none;
+      }
+      .bar h4:hover{
+        background-color: rgba(201, 18, 55, 0.932);
+        color: white;
+      }
+      footer{
+        background-color: lightskyblue;
+        margin: 10px;
+        height: 50px;
+        border: 2px solid chocolate;
+        border-radius: 7px;
+      }
+      @media (max-width: 550px) {
+        .bar h4{
+          display: none;
+        }
+        .box2{
+        background-color: rgb(240, 164, 66);
+        margin: 10px;
+        height: 50px;
+        border: 2px solid chocolate;
+        border-radius: 7px;
+        height: 80%;
+      }
+      footer{
+        background-color: rgb(76, 36, 252);
+        margin: 10px;
+        height: 50px;
+        border: 2px solid chocolate;
+        border-radius: 7px;
+      }
+      .bar h5{
+        color: darkgreen;
+        font-size: 40px;
+        padding-right: 10px;
+        display: block;
+
+      } 
+        
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="logo">
+        <h1><i>Logo</i></h1>
+      </div>
+      <div class="bar">
+        <h4>Home</h4>
+        <h4>About</h4>
+        <h4>Contact</h4>
+        <h4>Account</h4>
+        <h5>=</h5>
+      </div>
+    </div>
+    <main class="box2"></main>
+    <footer></footer>
+  </body>
+</html>

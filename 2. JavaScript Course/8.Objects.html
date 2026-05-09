@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects</title>
+</head>
+<body>
+    <h1>Objects in JavaScript</h1>
+    <p id="demo"></p>
+
+    <script>
+        document.body.style.backgroundColor = "black";
+        document.body.style.fontFamily = "Arial, Helvetica, sans-serif";
+        document.body.style.color = "lightgreen";
+
+        // let person = {
+        //     name: "Ravishankar",
+        //     age: 23,
+        //     city: "Mumbai"
+        // };
+        // console.log("Name : " + person.name);
+        // console.log("Age : " + person.age);
+        // console.log("City : " + person.city);
+        // let car = {
+        //     make: "Toyota",
+        //     model: "Camry",
+        //     year: 2020,
+        //     color: "Red"
+        // };
+        // console.log("Make : " + car.make);
+        // console.log("Model : " + car.model);
+        // console.log("Year : " + car.year);
+        // console.log("Color : " + car.color);
+
+        let user = {
+            name: "Ganesh",
+            age: 25,
+            city: "Pune",
+            profession: "Developer"
+        };
+        for(let key in user){
+            console.log(key + " : " + user[key]);
+        }
+        console.log(Object.keys(user)); // Output: ["name", "age", "city", "profession"]
+        console.log(Object.values(user)); // Output: ["Ganesh", 25, "Pune", "Developer"]
+        console.log(Object.entries(user)); // Output: [["name", "Ganesh"], ["age", 25], ["city", "Pune"], ["profession", "Developer"]]
+
+        // Adding New Property
+        user.country = "India"; // Adds a new property 'country' with the value "India"
+        console.log(user.country); // Output: "India"
+
+        // Deleting a Property
+        delete user.age; // Deletes the 'age' property from the user object
+        console.log(user.age); // Output: undefined
+
+        // for in loop to iterate over object properties
+        for(let key in user){
+            console.log(key + " : " + user[key]);
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

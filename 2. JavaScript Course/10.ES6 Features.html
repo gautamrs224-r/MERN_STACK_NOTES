@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ES6 Features</title>
+</head>
+<body>
+    <h1>ES6 Features in JavaScript</h1>
+    <p id="demo"></p>
+    
+    <script>
+        // ES6 (ECMAScript 2015) is the sixth major release of the ECMAScript language specification. It introduced several new features and improvements to JavaScript, making it more powerful and easier to work with. Some of the key features of ES6 include:
+
+        // 1. let and const: These are new ways to declare variables in JavaScript. let allows you to declare block-scoped variables, while const allows you to declare constants that cannot be reassigned.
+        // let and const
+        // let name = "Ravishankar";
+        // const pi = 3.14;
+        // console.log(name);
+        // console.log(pi);
+
+
+        // 2. Arrow Functions: Arrow functions provide a shorter syntax for writing functions in JavaScript. They also have lexical scoping, which means they inherit the this value from their enclosing context.
+        // Arrow Functions
+        // let sum = (a, b) => a + b;
+        // console.log(sum(5, 10));
+
+
+        // 3. Template Literals: Template literals allow you to create multi-line strings and embed expressions within strings using backticks (`) instead of quotes.
+        // Template Literals
+        // let name = "Dev";
+        // let greeting = `Hello, ${name}! Welcome to ES6 features.`;
+        // console.log(greeting);
+
+
+        // 4. Destructuring Assignment: This feature allows you to unpack values from arrays or properties from objects into distinct variables.
+        // Destructuring Assignment
+        // let [a, b, c] = [1, 2, 3];
+        // console.log(a); // 1
+        // console.log(b); // 2
+        // console.log(c); // 3
+        // let { name, age } = { name: "Ravishankar", age: 30 };
+        // console.log(name); // Ravishankar
+        // console.log(age); // 30
+        // Destricturing objects
+        // let user = {
+        //     name: "Ganesh",
+        //     age: 25,
+        //     city: "Pune"
+        // };
+        // let { name, age, city } = user;
+        // console.log(name); // Ganesh
+        // console.log(age); // 25
+        // console.log(city); // Pune
+        
+
+
+        // 5. Default Parameters: You can now set default values for function parameters, which will be used if no argument is provided when the function is called.
+        // Default Parameters
+        // function greet(name = "Guest") {
+        //     console.log(`Hello, ${name}!`);
+        // }
+        // greet(); // Hello, Guest!
+        // greet("Ravishankar"); // Hello, Ravishankar!
+
+
+        // 6. Rest and Spread Operators: The rest operator (...) allows you to represent an indefinite number of arguments as an array, while the spread operator allows you to expand an array into individual elements.
+        // Rest Operator
+        // function sum(...numbers) {   
+        //     return numbers.reduce((acc, curr) => acc + curr, 0);
+        // }
+        // console.log(sum(1, 2, 3)); // 6
+        // console.log(sum(4, 5, 6, 7)); // 22
+        // Spread Operator
+        // let arr1 = [1, 2, 3];
+        // let arr2 = [...arr1, 4, 5];
+        // console.log(arr2); // [1, 2, 3, 4, 5]
+        // let obj1 = { name: "Ravishankar", age: 30 };
+        // let obj2 = { ...obj1, profession: "Developer" };
+        // console.log(obj2); // { name: "Ravishankar", age: 30, profession: "Developer" }  
+        // These features have been widely adopted and are now commonly used in modern JavaScript development.
+        // let text = "";
+
+
+        // 7. Classes: ES6 introduced a new syntax for creating objects using classes, which provides a more familiar way to work with object-oriented programming in JavaScript.
+        // Classes
+        // class Person {
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //     } 
+        // }
+        // let person = new Person("Ravishankar", 30);
+        // console.log(person.name); // Ravishankar
+        // console.log(person.age); // 30
+
+
+        // 8. Modules: ES6 modules allow you to organize your code into separate files and import/export functionality between them.
+        // Modules
+        // In ES6, you can use the export and import statements to create and use modules. For example, you can create a module in a file called math.js:
+        // export function add(a, b) {
+        //     return a + b;
+        // }
+        // Then, you can import and use this module in another file:
+        // import { add } from './math.js'; 
+        // console.log(add(5, 10)); // 15
+        // These are just a few examples of the many features introduced in ES6. It has significantly improved the way we write and organize JavaScript code, making it more efficient and easier to maintain.  
+        // These features have been widely adopted and are now commonly used in modern JavaScript development.
+        
+        // let text = "";
+        // text += "ES6 (ECMAScript 2015) is the sixth major release of the ECMAScript language specification. It introduced several new features and improvements to JavaScript, making it more powerful and easier to work with. Some of the key features of ES6 include: <br>";
+        // text += "1. let and const: These are new ways to declare variables in JavaScript. let allows you to declare block-scoped variables, while const allows you to declare constants that cannot be reassigned. <br>";
+        // text += "2. Arrow Functions: Arrow functions provide a shorter syntax for writing functions in JavaScript. They also have lexical scoping, which means they inherit the this value from their enclosing context. <br>";
+        // text += "3. Template Literals: Template literals allow you to create multi-line strings and embed expressions within strings using backticks (`) instead of quotes. <br>";
+        // text += "4. Destructuring Assignment: This feature allows you to unpack values from arrays or properties from objects into distinct variables. <br>";
+        // text += "5. Default Parameters: You can now set default values for function parameters, which will be used if no argument is provided when the function is called. <br>";
+        // text += "6. Rest and Spread Operators: The rest operator (...) allows you to represent an indefinite number of arguments as an array, while the spread operator allows you to expand an array into individual elements. <br>";
+        // text += "7. Classes: ES6 introduced a new syntax for creating objects using classes, which provides a more familiar way to work with object-oriented programming in JavaScript. <br>";
+        // text += "8. Modules: ES6 modules allow you to organize your code into separate files and import/export functionality between them. <br>";
+        // text += "These are just some of the many features introduced in ES6, and they have greatly enhanced the capabilities of JavaScript as a programming language. <br>";
+        // document.getElementById("demo").innerHTML = text;
+        
+        
+
+
+    </script>
+</body>
+</html>

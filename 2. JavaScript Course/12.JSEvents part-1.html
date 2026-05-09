@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>JavaScript Events</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            background-color: darkgray;
+            display: flex;
+            align-items: center;
+            justify-content:  center;
+        }
+        input{
+            display: none;
+        }
+        #btn{
+            padding: 12px 22px;
+            background-color: crimson;
+            border-radius: 10px;
+            font-weight: 300;
+            user-select: none;
+        }
+        #btn:hover{
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <input type="file" name="inputfile" id="inpt">
+        <div id="btn">Upload File</div>
+    </div>
+    <!-- <h1 class="text-3xl p-4">JavaScript Events</h1> -->
+    <!-- <button class="m-5 p-1 border rounded" id="myButton">Click Me</button>
+    <input type="text" placeholder="Name" class="border p-1 rounded">
+    <h4 id="device">Select Your Device: </h4>
+    <select name="" id="">
+        <option selected disabled>Choose Your Device</option>
+        <option value="samsung">Samsung</option>
+        <option value="apple">Apple</option>
+        <option value="mi">MI</option>
+        <option value="realme">Realme</option>
+    </select> -->
+
+
+    <script>
+        // About Events
+        // An event is an action or occurrence that happens in the system you are programming, which the system tells you about so your code can respond to it. In JavaScript, events are actions that occur in the browser, such as a user clicking a button, moving the mouse, or pressing a key on the keyboard. You can use JavaScript to listen for these events and execute code in response to them.
+
+        // Event Listeners
+        // An event listener is a function that waits for a specific event to occur and then executes some code in response to that event. You can add an event listener to an element using the addEventListener method. For example, you can add a click event listener to a button like this:
+        // const button = document.getElementById('myButton');
+        // const h1 = document.querySelector('h1');
+        // button.addEventListener('dblclick', function() {
+        //     h1.style.color = 'red';
+        //     alert('Button was double-clicked!');
+        // });
+        // button.removeEventListener('dblclick', function(){
+        // console.log("removed")});
+
+        // Common Events:
+        // input EventListener
+        // let input = document.querySelector('input');
+        // let h1 = document.querySelector('h1');
+
+        // input.addEventListener('input', function(inp){
+        //     if(inp.data !== null){
+        //         console.log(inp.data);
+        //     }
+        // });
+
+        // Change Event Listener
+        // let device = document.querySelector('#device');
+        // let select = document.querySelector('select');
+
+        // select.addEventListener('change', function(data){
+        //     device.textContent = `${data.target.value} Device Selected.`;
+        // })
+
+        // Keydown EventListener
+        // let h1 = document.querySelector('h1');
+
+        // window.addEventListener('keydown', function(data){
+        //     if(data.key === " "){
+        //         h1.textContent = "Space";
+        //     }else{
+        //         h1.textContent = data.key;
+        //     }
+        // });
+
+
+        // connect own button to input file using click event listener
+
+        let btn = document.querySelector('#btn');
+        let fileinp = document.querySelector('#inpt');
+
+        btn.addEventListener('click', function(){
+            fileinp.click();
+        });
+
+        fileinp.addEventListener('change', function(data){
+            let file = data.target.files[0];
+            if(file){
+                btn.textContent = file.name;
+            }
+            
+        });
+        
+        
+        
+       
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-6xl w-full grid md:grid-cols-2 gap-8">
+      <!-- Form Section -->
+      <div class="bg-white shadow-xl rounded-2xl p-6">
+        <h1 class="text-2xl font-bold mb-6">Create Profile</h1>
+
+        <form id="profileForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-2"
+              >Profile Picture Link</label
+            >
+            <input
+              id="profilePic"
+              type="text"
+              placeholder="Enter image URL"
+              class="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">Name</label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Enter your name"
+              class="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">Occupation</label>
+            <input
+              id="occupation"
+              type="text"
+              placeholder="Enter occupation"
+              class="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">Biodata</label>
+            <textarea
+              id="biodata"
+              rows="4"
+              placeholder="Write something about yourself"
+              class="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition"
+          >
+            Generate Card
+          </button>
+        </form>
+      </div>
+
+      <!-- Card Preview Section -->
+      <div class="flex items-center justify-center">
+        <div
+          id="profileCard"
+          class="hidden bg-white shadow-xl rounded-2xl p-6 w-full max-w-sm text-center"
+        >
+          <img
+            id="cardImage"
+            src="https://img.magnific.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Profile"
+            class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-gray-200"
+          />
+
+          <h2 id="cardName" class="text-2xl font-bold">Your Name</h2>
+          <p id="cardOccupation" class="text-blue-500 font-medium mt-2">
+            Your Occupation
+          </p>
+          <p id="cardBio" class="text-gray-600 mt-4 text-sm leading-relaxed">
+            Your biodata will appear here...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("profileForm");
+      const profilePicInput = document.getElementById("profilePic");
+      const nameInput = document.getElementById("name");
+      const occupationInput = document.getElementById("occupation");
+      const biodataInput = document.getElementById("biodata");
+
+      const cardImage = document.getElementById("cardImage");
+      const cardName = document.getElementById("cardName");
+      const cardOccupation = document.getElementById("cardOccupation");
+      const cardBio = document.getElementById("cardBio");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const imageValue = profilePicInput.value;
+        const nameValue = nameInput.value;
+        const occupationValue = occupationInput.value;
+        const bioValue = biodataInput.value;
+
+        document.getElementById("profileCard").classList.remove("hidden");
+
+        cardImage.src =
+          imageValue ||
+          "https://img.magnific.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80";
+        cardName.innerText = nameValue || "Your Name";
+        cardOccupation.innerText = occupationValue || "Your Occupation";
+        cardBio.innerText = bioValue || "Your biodata will appear here...";
+
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

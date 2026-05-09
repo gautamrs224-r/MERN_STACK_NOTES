@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Basics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #000000;
+        }
+        h1 {
+            color: #29da19;
+        }
+        h2 {
+            color: #31cf12;
+        }
+        p {
+            line-height: 1.6;
+            color: #ffffff;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+        pre {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS3 Basics(Theory)</h1>
+    <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML. CSS3 is the latest version of CSS, which includes new features and improvements for styling web pages. Here are some basics of CSS3:</p>
+    <h2>1. Selectors</h2>
+    <p>Selectors are used to target HTML elements and apply styles to them. Some common selectors include:</p>
+    <ul>
+        <li><strong>Element Selector:</strong> Targets all elements of a specific type (e.g., p, h1).</li>
+        <li><strong>Class Selector:</strong> Targets elements with a specific class attribute (e.g., .my-class).</li>
+        <li><strong>ID Selector:</strong> Targets an element with a specific id attribute (e.g., #my-id).</li>
+        <li><strong>Attribute Selector:</strong> Targets elements based on their attributes (e.g., input[type="text"]).</li>
+    </ul>
+    <h2>2. Colors & Units</h2>
+    <p>CSS3 supports various color formats, including:</p>
+    <ul>
+        <li><strong>Hexadecimal:</strong> #RRGGBB (e.g., #ff0000 for red).</li>
+        <li><strong>RGB:</strong> rgb(255, 0, 0) for red.</li>
+        <li><strong>RGBA:</strong> rgba(255, 0, 0, 0.5) for semi-transparent red.</li>
+        <li><strong>HSL:</strong> hsl(0, 100%, 50%) for red.</li>
+    </ul>
+    <p>CSS3 also supports various units for specifying lengths, such as:</p>
+    <ul>
+        <li><strong>Pixels (px):</strong> A fixed unit of measurement.</li>
+        <li><strong>Em:</strong> A relative unit based on the font size of the element.</li>
+        <li><strong>Rem:</strong> A relative unit based on the root font size.</li>
+        <li><strong>Percentage (%):</strong> A relative unit based on the size of the parent element.</li>
+    </ul>
+    <h2>3. Box Model</h2>
+    <ul>
+        <li><strong>Content:</strong> The actual content of the element.</li>
+        <li><strong>Padding:</strong> The space between the content and the border.</li>
+        <li><strong>Border:</strong> The line surrounding the padding and content.</li>
+        <li><strong>Margin:</strong> The space outside the border, separating the element from other elements.</li>
+    </ul>
+    <p>Understanding the box model is crucial for controlling the layout and spacing of elements on a web page.</p>
+
+    <h2>4. Display</h2>
+    <p>The display property in CSS3 determines how an element is displayed on the page. Some common display values include:</p>
+    <ul>
+        <li><strong>block:</strong> The element takes up the full width of its container and starts on a new line.</li>
+        <li><strong>inline:</strong> The element takes up only as much width as necessary and does not start on a new line.</li>
+        <li><strong>inline-block:</strong> The element behaves like an inline element but can have width and height.</li>
+        <li><strong>none:</strong> The element is not displayed at all.</li>
+    </ul>
+    <p>By using CSS3, you can create visually appealing and responsive web designs that enhance the user experience. As you continue to learn CSS3, you'll discover more advanced features and techniques for styling your web pages.</p>
+    <p>In the next sections, we will explore more advanced CSS3 features such as Flexbox, Grid, Responsive Design, and Animations to further enhance your web development skills.</p>
+    <h2>5. Positioning</h2>
+    <p>CSS3 provides several positioning schemes to control the layout of elements on a web page. The main positioning values include:</p>
+    <ul>
+        <li><strong>static:</strong> The default positioning value. Elements are positioned according to the normal document flow.</li>
+        <li><strong>relative:</strong> The element is positioned relative to its normal position.</li>
+        <li><strong>absolute:</strong> The element is positioned relative to its nearest positioned ancestor.</li>
+        <li><strong>fixed:</strong> The element is positioned relative to the viewport, remaining in place even when the page is scrolled.</li>
+    </ul>
+    <p>Understanding positioning is essential for creating complex layouts and controlling the placement of elements on a web page.</p>
+
+    <h2>6. Animations</h2>
+    <p>CSS3 animations allow you to create smooth transitions and dynamic effects on web pages. You can define keyframes to specify the styles at various points in the animation sequence.</p>
+    <p>To create an animation, you can use the @keyframes rule to define the animation and then apply it to an element using the animation property. For example:</p>
+    <pre>@keyframes example {
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }
+    .animated-element {
+        animation: example 5s infinite;
+    }</pre>
+    <p>This will create an animation that changes the background color of the element from red to yellow over a duration of 5 seconds, repeating indefinitely.</p>
+    <p>CSS3 animations can be used to enhance the user experience by adding visual interest and interactivity to your web pages. As you explore more advanced CSS3 features, you'll find even more ways to create engaging and dynamic web designs.</p>
+
+    h2>7. Responsive Design</h2>
+    <p>Responsive design is a design approach that ensures your web pages look and function well on a variety of devices and screen sizes. CSS3 provides several tools to help you create responsive designs, including media queries, flexible grid layouts, and responsive images.</p>
+    <p>Media queries allow you to apply different styles based on the characteristics of the device, such as its width, height, or orientation. For example:</p>
+    <pre>@media (max-width: 600px) {
+        body {
+            background-color: lightblue;
+        }
+    }</pre>
+    <p>This media query will change the background color of the body to light blue when the viewport width is 600 pixels or less, making it suitable for mobile devices.</p>
+    <p>By using responsive design techniques, you can ensure that your web pages provide a great user experience across all devices, from desktops to smartphones.</p>
+    <h2>8. Flexbox</h2>
+    <p>Flexbox is a powerful layout module in CSS3 that allows you to create flexible and responsive layouts with ease. It provides a more efficient way to align and distribute space among items in a container, even when their size is unknown or dynamic.</p>
+    <p>To use Flexbox, you can set the display property of a container to flex. This will enable Flexbox for that container and allow you to use various properties to control the layout of its child elements. For example:</p>
+    <pre>.container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }</pre>
+    <p>This will create a flex container that centers its child elements both horizontally and vertically. Flexbox provides many other properties for controlling the layout, such as flex-direction, flex-wrap, and align-content, allowing you to create complex and responsive layouts with ease.</p>
+    <p>As you continue to learn CSS3, you'll discover even more features and techniques for creating visually appealing and responsive web designs. With practice and experimentation, you'll be able to master CSS3 and create stunning websites that provide an excellent user experience.</p>
+    <h2>9. Grid Layout</h2>
+    <p>CSS Grid Layout is another powerful layout system in CSS3 that allows you to create complex and responsive grid-based layouts. It provides a two-dimensional grid system, enabling you to control both rows and columns of your layout.</p>
+    <p>To use CSS Grid, you can set the display property of a container to grid. This will enable Grid Layout for that container and allow you to define the grid structure using properties like grid-template-columns and grid-template-rows. For example:</p>
+    <pre>.container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+    }</pre> 
+    <p>This will create a grid container with two columns, where the first column takes up one fraction of the available space and the second column takes up two fractions. CSS Grid provides many other properties for controlling the layout, such as grid-gap, grid-area, and justify-items, allowing you to create complex and responsive grid layouts with ease.</p>
+    <p>By mastering CSS Grid Layout, you can create sophisticated and responsive web designs that adapt to different screen sizes and provide an excellent user experience. As you continue to explore CSS3, you'll find even more ways to enhance your web designs and create stunning websites.</p>
+    <h2>10. Conclusion</h2>
+    <p>In this course, you've learned the fundamentals of CSS3 and how to create visually appealing and responsive web designs. By mastering these concepts, you'll be well-equipped to build modern websites that provide an excellent user experience across all devices.</p>
+    <p>As you continue to practice and explore CSS3, you'll discover even more features and techniques for creating stunning web designs. Remember to experiment with different properties and layouts to find what works best for your projects. With dedication and creativity, you can become proficient in CSS3 and create amazing websites that stand out on the web.</p>
+    
+</body>
+</html>

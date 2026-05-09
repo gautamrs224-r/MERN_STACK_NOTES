@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM</title>
+</head>
+<body>
+    <h1 id="dom">JavaScript DOM</h1>
+    <p class="para">This is a paragraph.</p>
+    <button id="myButton">Click Me</button>
+    <a href="">Download</a>
+    <img src="" alt="Image">
+
+
+    <script>
+        // About DOM
+        // DOM stands for Document Object Model
+        // It is a programming interface for web documents
+        // It represents the page so that programs can change the document structure, style, and content
+        // The DOM represents the document as nodes and objects; that way, programming languages can interact with the page content, structure, and styles 
+
+        // Elements Node
+        // The DOM represents the document as a tree of nodes. Each node represents a part of the document, such as an element, attribute, or text. The most common type of node is the element node, which represents an HTML element. For example, in the following HTML code:
+        // <div>
+        //     <p>This is a paragraph.</p>
+        // </div>
+        // The <div> and <p> elements are represented as element nodes in the DOM tree. The text "This is a paragraph." is represented as a text node, which is a child of the <p> element node.
+        // The DOM allows you to access and manipulate these nodes using JavaScript. For example, you can use the getElementById method to access an element node by its ID, or you can use the innerHTML property to change the content of an element node.
+
+        //
+        
+        // Types of Selecting elements and Text/content access
+        // getElementById
+        // const dom = document.getElementById('dom');
+        // console.dir(dom);
+        // dom.innerHTML = "<i>Java Script</>";
+        // dom.innerText = "Java Script DOM";
+        // dom.textContent = "JavaScript DOM";
+        // getElementsByClassName
+        // const para = document.getElementsByClassName('para');
+        // console.log(para);
+        // querySelector
+        // const dom = document.querySelector('#dom');
+        // console.log(dom);
+        // querySelectorAll
+        // const para = document.querySelectorAll('.para');
+        // console.log(para);
+
+        //Attribute Manipulation
+        // let link = document.querySelector('a');
+        // console.log(link.getAttribute('href'));
+        // link.setAttribute('href', 'https://www.google.com');
+        // link.removeAttribute('href', '');
+        // let img = document.querySelector('img');
+        // img.setAttribute('src', '-------');
+        // img.setAttribute('alt', 'Updated Image');
+
+        // Dynamic DOM manipulation
+        // let h2 = document.createElement('h2');
+        // h2.textContent = "This is a heading";
+        // document.body.appendChild(h2); // Adds the new element as the last child of the body
+        // document.body.prepend(h2); // Adds the new element as the first child of the body
+        // let para = document.querySelector('.para');
+        //document.body.removeChild(para); // Removes the specified child from the body
+        // para.remove(); // Removes the element from the DOM
+
+        // Style Manipulation
+        // let dom = document.querySelector('#dom');
+        // dom.style.color = "blue";
+        // dom.style.fontSize = "30px";
+        // dom.style.backgroundColor = "lightgray";
+        // Class list manipulation
+        // dom.classList.add('highlight'); // Adds a class to the element
+        // dom.classList.remove('highlight'); // Removes a class from the element
+        // dom.classList.toggle('highlight'); // Toggles a class on the element
+
+        //select all list elements and print their text content
+        // let listItems = document.querySelectorAll('li');
+        // listItems.forEach(item => {
+        //     console.log(item.textContent);
+        // });
+        
+        
+
+
+
+    </script>
+</body>
+</html>

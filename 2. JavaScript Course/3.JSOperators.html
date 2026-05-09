@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Operators</title>
+</head>
+
+<body>
+    <h1>Java Script Operators</h1>
+    <p id="demo"></p>
+    <hr>
+    <p id="demo2"></p>
+    
+    <script>
+        document.body.style.backgroundColor = "black";
+        document.body.style.fontFamily = "Arial, Helvetica, sans-serif";
+        document.body.style.color = "lightgreen";
+        let x = 10;
+        let y = 5;
+
+        // Arithmetic Operators:
+        document.getElementById("demo").innerHTML = "x + y = " + (x + y) + "<br>";
+        document.getElementById("demo").innerHTML += "x - y = " + (x - y) + "<br>";
+        document.getElementById("demo").innerHTML += "x * y = " + (x * y) + "<br>";
+        document.getElementById("demo").innerHTML += "x / y = " + (x / y) + "<br>";
+        document.getElementById("demo").innerHTML += "x % y = " + (x % y) + "<br>";
+
+        // Assignment Operators:
+        let a = 10;
+        a += 5; // a = a + 5
+        document.getElementById("demo").innerHTML += "a += 5 => a = " + a + "<br>";
+
+        let b = 20;
+        b -= 10; // b = b - 10
+        document.getElementById("demo").innerHTML += "b -= 10 => b = " + b + "<br>";
+
+        let c = 15;
+        c *= 2; // c = c * 2
+        document.getElementById("demo").innerHTML += "c *= 2 => c = " + c + "<br>";
+
+        let d = 50;
+        d /= 5; // d = d / 5
+        document.getElementById("demo").innerHTML += "d /= 5 => d = " + d + "<br>";
+
+        // Comparison Operators:
+        document.getElementById("demo").innerHTML += "x == y: " + (x == y) + "<br>";
+        document.getElementById("demo").innerHTML += "x != y: " + (x != y) + "<br>";
+        document.getElementById("demo").innerHTML += "x > y: " + (x > y) + "<br>";
+        document.getElementById("demo").innerHTML += "x < y: " + (x < y) + "<br>";
+        document.getElementById("demo").innerHTML += "x >= y: " + (x >= y) + "<br>";
+        document.getElementById("demo").innerHTML += "x <= y: " + (x <= y) + "<br>";
+
+        // Logical Operators:
+        let p = true;
+        let q = false;
+        document.getElementById("demo").innerHTML += "p && q: " + (p && q) + "<br>";
+        document.getElementById("demo").innerHTML += "p || q: " + (p || q) + "<br>";
+        document.getElementById("demo").innerHTML += "!p: " + (!p) + "<br>";
+
+
+    </script>
+</body >
+</html >

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basics</title>
+</head>
+<body>
+    <h1>Javascript Basics</h1>
+    <p>this is my first javascript code.</p>
+    <p id="btn">I'm Replacable !</p>
+    <button type="button" onclick='document.getElementById("btn").innerHTML = "<h1>Now You have Replaced me !</h1>"'>Change</button>
+
+    <hr>
+
+    <button onclick='document.getElementById("img").src="img/img1.png"'>Austere</button>
+
+    <img id="img" src="img/img1.png" style="width: 200px;">
+
+    <button onclick='document.getElementById("img").src="img/img2.jpeg"'>Designed</button>
+
+    <hr>
+
+    <h4 id="size">Can increase my size by click this button !</h4>
+    <button type="button" onclick="document.getElementById('size').style.fontSize='40px'">Increase me</button>
+    <button type="button" onclick="document.getElementById('size').style.fontSize='15px'">Decrease me</button>
+
+    <hr>
+
+    <h1 id="hide">You can hide me by click on this button ! Subsequently you will see what javascript can do !</h1>
+    <button type="button" onclick="document.getElementById('hide').style.display='none'">Hide</button>
+    <button type="button" onclick="document.getElementById('hide').style.display='block'">show</button>
+
+    <hr>
+
+
+
+
+</body>
+</html>

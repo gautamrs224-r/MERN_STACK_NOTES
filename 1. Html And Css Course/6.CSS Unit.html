@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Unit</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        .parent{
+            margin: 24px;
+            background-color: crimson;
+            height: 50%;
+            width: 50%;
+        }
+        .child{
+            background-color: rgb(110, 112, 114);
+            height: 50%;
+            width: 50%;
+        }
+        h1{
+            font-size: 14vw;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- * px - fixed 
+        % - depending on parent 
+        vw - viewport width(depending on screen width) 
+        vh - viewport height (depending on screen height)
+        rem - 
+        -->
+    <h1>Hello Dev !</h1>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

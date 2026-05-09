@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSEvents and Events Handling</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            color: azure;
+            position: relative;
+            overflow: hidden;
+        }
+        #abcd{
+            position: absolute;
+            /* transition: cubic-bezier(0.19, 1, 0.22, 1) 1s; */
+            height: 400px;
+            width: 400px;
+            background-color: crimson;
+        }
+        h1{
+            z-index: 100;
+        }
+        .lt{
+            text-decoration: line-through;
+        }
+        #counter{
+            height: 300px;
+            width: 400px;
+            background-color: rgb(16, 104, 75);
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        input{
+            padding: 10px;
+            border: 2px solid red;
+            color: rgb(8, 66, 255);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Events In JS</h1>
+    <!-- <div id="abcd"></div> -->
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>NodeJS</li>
+        <li>MongoDB</li>
+    </ul>
+    <div id="counter">
+        <input type="text" placeholder="Write Anything here...">
+        <h1>Total Characters : <span></span></h1>
+    </div>
+
+
+    <script>
+        // Mouse over and out Events
+        // let abcd = document.querySelector('#abcd');
+
+        // abcd.addEventListener('mouseover', function(){
+        //     abcd.style.backgroundColor= 'green';
+        // });
+        // abcd.addEventListener('mouseout', function(){
+        //     abcd.style.backgroundColor= 'red';
+        // });
+
+        // Mouse move Event
+        // window.addEventListener('mousemove', function(data){
+        //     abcd.style.top = data.clientY + "px";
+        //     abcd.style.left = data.clientX + "px";
+        // })
+
+        // Event Bubbling
+        // whenever we click or raise an event two phases happens:
+        // Phase 1: Event happens top level towards bottom level.
+        // Phase 2: While Raising an Event it goes down towards parent.
+        // And everytime phase 1 happens first
+        //Practice - 1
+        let ul = document.querySelector('ul');
+        ul.addEventListener("click", function(dets){
+            dets.target.classList.toggle("lt");
+        })
+
+        //Practice -2
+        let inp = document.querySelector("input");
+        let span = document.querySelector('span');
+        inp.addEventListener('input', function(){
+            span.textContent = inp.value.length;
+        })
+
+        // Exceeding limit of texts
+        // let inp = document.querySelector("input");
+        // let span = document.querySelector('span');
+        // inp.addEventListener('input', function(){
+        //     let left = 20- inp.value.length;
+        //     span.textContent = left;
+        //     if(left < 0){
+        //         span.style.color = 'red';
+        //     }else{
+        //         span.style.color = 'white'
+        //     }
+
+        // })
+        if(inp == " "){
+            
+        }
+
+
+    </script>
+</body>
+</html>

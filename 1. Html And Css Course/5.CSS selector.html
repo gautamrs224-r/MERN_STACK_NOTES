@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector </title>
+    <style>
+        body{
+            background-color: rgb(182, 184, 184);
+        }
+        h1{
+            color: darkblue;
+        }
+        p{
+            color: darkblue;
+            background-color: greenyellow;
+        }
+        #para{
+            color: darkgreen;
+            background-color: aqua;
+        }
+        #text{
+            font-size: 20px;
+            padding: 5px;
+            border: 2px solid black;
+            color: black;
+            background-color: aqua;
+        }
+        .btn{
+            font-size: 20px;
+            padding: 5px 7px;
+            font-weight: 500;
+            margin-left: 10px;
+            border: 2px solid black;
+
+        }
+        .btn:hover{
+            color: red;
+            background-color: greenyellow;
+        }
+        #text:focus{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Let's Master CSS !</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, alias?</p>
+    <p id="para">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    <input type="text" id="text" placeholder="Write here" required>
+    <button class="btn" onclick="changeTxt()">Click</button>
+    <script>
+        function changeTxt(){
+            let para = document.querySelector("#para");
+            let text = document.querySelector("#text");
+            para.textContent = text.value;
+        }
+    </script>
+</body>
+</html>
