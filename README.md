@@ -28,10 +28,10 @@ This repository is my personal learning space where I upload my notes, practice 
 
 ### ✅ Completed
 
-✔ HTML5  
+✔ HTML5    
 ✔ CSS3  
-✔ Tailwind CSS
-✔ JavaScript Fundamentals
+✔ Tailwind CSS     
+✔ JavaScript Fundamentals 
 
 Topics covered in JavaScript:
 
@@ -86,3 +86,28 @@ Upcoming topics:
 ⏳ MongoDB
 ⏳ Full Stack Projects
 ```
+🛠 Tech Stack So Far
+<p> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> </p>
+
+📈 Goal for 2026
+
+Become job-ready as a Full Stack Developer by:
+
+Building strong fundamentals
+Creating portfolio projects
+Learning backend development
+Practicing DSA
+Preparing for interviews
+🌟 Progress Tracker
+
+Progress: 30% Completed
+
+███████░░░░░░░░░░ 30%
+
+🤝 Connect With Me
+
+Feel free to follow my journey and check my progress.
+
+⭐ If you find this repository useful, consider starring it.
+
+<p align="center"> <b>Consistency beats intensity.</b><br> One step every day 🚀 </p> ```
