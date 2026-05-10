@@ -33,7 +33,7 @@
         ⬇
       </div>
       <div>
-        <h2 class="text-xl font-bold">Downloading File</h2>
+        <h2 id="fileName" class="text-xl font-bold">Downloading File</h2>
         <p class="text-sm text-white/70">glass-ui.zip</p>
       </div>
     </div>
@@ -93,6 +93,7 @@
     const progress = document.getElementById('progress');
     const percent = document.getElementById('percent');
     const speed = document.getElementById('speed');
+    const fileName = document.getElementById('fileName');
 
     let interval;
 
@@ -104,7 +105,9 @@
       interval = setInterval(() => {
         if (value >= 100) {
           clearInterval(interval);
+          fileName.innerText = 'Download Complete';
           btn.innerText = 'Download Complete ✓';
+          btn.style.backgroundColor = '#22c55e';
           speed.innerText = 'Done';
           return;
         }
