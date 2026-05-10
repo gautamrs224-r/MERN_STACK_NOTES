@@ -1,13 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Times and Intervals</title>
-  </head>
-  <body>
-    <script>
-      // set Timeout
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glassmorphism Download Simulation</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .progress-fill {
+      transition: width 0.2s linear;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center font-sans">
+
+  <div class="glass w-[380px] rounded-3xl p-8 text-white">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-16 h-16 rounded-2xl glass flex items-center justify-center text-3xl">
+        ⬇
+      </div>
+      <div>
+        <h2 class="text-xl font-bold">Downloading File</h2>
+        <p class="text-sm text-white/70">glass-ui.zip</p>
+      </div>
+    </div>
+
+    <div class="w-full h-4 bg-white/10 rounded-full overflow-hidden mb-4">
+      <div id="progress" class="progress-fill h-full bg-white/70 rounded-full w-0"></div>
+    </div>
+
+    <div class="flex justify-between text-sm mb-6">
+      <span id="percent">0%</span>
+      <span id="speed">0 KB/s</span>
+    </div>
+
+    <button id="downloadBtn" 
+      class="w-full py-3 rounded-2xl glass hover:bg-white/20 transition-all duration-300 font-semibold">
+      Start Download
+    </button>
+  </div>
+
+  <script>
+
+    // set Timeout
       // setTimeout(function(){
       //     console.log("I'm learning Times and Intervals in javascript");
       // }, 5000);
@@ -18,28 +66,56 @@
       // }, 5000);
 
       // clear set Timeout/Interval
-      let cletm = setTimeout(function () {
-        console.log("I'm Dev");
-      }, 5000);
-      clearTimeout(cletm);
+    //   let cletm = setTimeout(function () {
+    //     console.log("I'm Dev");
+    //   }, 5000);
+    //   clearTimeout(cletm);
 
-      let cleIV = setInterval(function () {
-        console.log("I'm Dev");
-      }, 5000);
-      clearInterval(cleIV);
+    //   let cleIV = setInterval(function () {
+    //     console.log("I'm Dev");
+    //   }, 5000);
+    //   clearInterval(cleIV);
 
       // Counter
-      let count = 10;
-      let counter = setInterval(function () {
-        if (count >= 0) {
+    //   let count = 10;
+    //   let counter = setInterval(function () {
+    //     if (count >= 0) {
           
-          console.log(count);
-          count--;
-        }else{
-            clearInterval(counter);
-            console.log("Counter is stopped");
+    //       console.log(count);
+    //       count--;
+    //     }else{
+    //         clearInterval(counter);
+    //         console.log("Counter is stopped");
+    //     }
+    //   }, 1000);
+
+    const btn = document.getElementById('downloadBtn');
+    const progress = document.getElementById('progress');
+    const percent = document.getElementById('percent');
+    const speed = document.getElementById('speed');
+
+    let interval;
+
+    btn.addEventListener('click', () => {
+      let value = 0;
+      btn.disabled = true;
+      btn.innerText = 'Downloading...';
+
+      interval = setInterval(() => {
+        if (value >= 100) {
+          clearInterval(interval);
+          btn.innerText = 'Download Complete ✓';
+          speed.innerText = 'Done';
+          return;
         }
-      }, 1000);
-    </script>
-  </body>
+
+        value++;
+        progress.style.width = value + '%';
+        percent.innerText = value + '%';
+        speed.innerText = Math.floor(Math.random() * 900 + 100) + ' KB/s';
+      }, 100);
+    });
+  </script>
+
+</body>
 </html>
