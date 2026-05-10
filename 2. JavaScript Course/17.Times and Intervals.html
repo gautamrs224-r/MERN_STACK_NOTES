@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Times and Intervals</title>
+  </head>
+  <body>
+    <script>
+      // set Timeout
+      // setTimeout(function(){
+      //     console.log("I'm learning Times and Intervals in javascript");
+      // }, 5000);
+
+      // set Interval
+      // setInterval(function(){
+      //     console.log("I'm Dev aka Developer");
+      // }, 5000);
+
+      // clear set Timeout/Interval
+      let cletm = setTimeout(function () {
+        console.log("I'm Dev");
+      }, 5000);
+      clearTimeout(cletm);
+
+      let cleIV = setInterval(function () {
+        console.log("I'm Dev");
+      }, 5000);
+      clearInterval(cleIV);
+
+      // Counter
+      let count = 10;
+      let counter = setInterval(function () {
+        if (count >= 0) {
+          
+          console.log(count);
+          count--;
+        }else{
+            clearInterval(counter);
+            console.log("Counter is stopped");
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
