@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage, Session Storage and Cookies</title>
+    <style></style>
+  </head>
+  <body class="dark">
+    <div class="container">
+      <h1>Theme Preference</h1>
+      <button id="toggleTheme">Toggle Theme</button>
+    </div>
+    <script>
+      // Local Storage
+      // It is a web storage that allows us to store data in the browser. It is a key-value pair storage that can store data in the form of strings. It is a permanent storage that can store data even after the browser is closed. It has no expiration time.
+
+      // localStorage.setItem("name", "Ravishankar");
+      // let naam = localStorage.getItem('name');
+      // console.log(naam);
+      // localStorage.setItem('name', 'Ravishankar Gautam');
+      // console.log(localStorage.getItem('name'));
+      // localStorage.removeItem("name");
+      // localStorage.clear();
+
+      //   localStorage.setItem(
+      //     "names",
+      //     JSON.stringify(["Ravishankar", "Gautam", "Dev"]),
+      //   );
+      //   let names = JSON.parse(localStorage.getItem("names"));
+      //   console.log(names);
+
+      // Session Storage
+      // It is a web storage that allows us to store data in the browser. It is a key-value pair storage that can store data in the form of strings. It is a temporary storage that can store data only for the duration of the page session. It is cleared when the page session ends.
+
+      //   sessionStorage.setItem("name", "Ravishankar is a boy");
+      //   sessionStorage.removeItem("name");
+      //   sessionStorage.clear();
+
+      // Cookies
+      // It is a small piece of data that is stored in the browser. It is a key-value pair storage that can store data in the form of strings. It is a permanent storage that can store data even after the browser is closed. It has an expiration time that can be set by the server or the client.
+      //   document.cookie = "name = Ravishankar, subject = JavaScript";
+
+      // theme toggle
+      // System Preference
+      // It is a feature that allows us to detect the user's preferred color scheme (light or dark) and apply it to our website. We can use the CSS media query "prefers-color-scheme" to detect the user's preference and apply the corresponding styles.
+
+      const body = document.body;
+      const toggleBtn = document.getElementById("toggleTheme");
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function setTheme(theme) {
+        body.classList.toggle("dark", theme === "dark");
+        body.classList.toggle("light", theme === "light");
+        localStorage.setItem("theme", theme);
+      }
+
+      // Set initial theme
+      const savedTheme = localStorage.getItem("theme");
+      setTheme(savedTheme || (mediaQuery.matches ? "dark" : "light"));
+
+      // Toggle theme manually
+      toggleBtn.addEventListener("click", () => {
+        const newTheme = body.classList.contains("dark") ? "light" : "dark";
+        setTheme(newTheme);
+      });
+
+      // Auto-update when system theme changes (only if no manual preference saved)
+      mediaQuery.addEventListener("change", (e) => {
+        if (!localStorage.getItem("theme")) {
+          setTheme(e.matches ? "dark" : "light");
+        }
+      });
+    </script>
+  </body>
+</html>
